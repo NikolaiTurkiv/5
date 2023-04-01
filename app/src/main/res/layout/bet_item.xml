@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="5dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginEnd="5dp"
+    android:background="@drawable/bg_stroke_black">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/text_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tv_bet_name"
+            style="@style/bet_item_style"
+            android:layout_width="120dp"
+            android:layout_gravity="center"
+            android:layout_weight="2"
+            app:layout_constraintEnd_toEndOf="@+id/tv_bet_name_title"
+            app:layout_constraintStart_toStartOf="@+id/tv_bet_name_title"
+            app:layout_constraintTop_toBottomOf="@+id/tv_bet_name_title"
+            tools:text="Ставка" />
+
+        <TextView
+            android:id="@+id/tv_odd"
+            style="@style/bet_item_style"
+            android:layout_width="0dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            app:layout_constraintEnd_toStartOf="@+id/tv_profit"
+            app:layout_constraintStart_toEndOf="@+id/tv_odd_title"
+            app:layout_constraintTop_toBottomOf="@+id/tv_bet"
+            tools:text="1.9000" />
+
+        <TextView
+            android:id="@+id/tv_bet"
+            style="@style/bet_item_style"
+            android:layout_width="0dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_bet_title"
+            app:layout_constraintEnd_toStartOf="@+id/tv_profit"
+            app:layout_constraintStart_toEndOf="@+id/tv_bet_title"
+            app:layout_constraintTop_toTopOf="@+id/tv_bet_title"
+            tools:text="200000" />
+
+        <TextView
+            android:id="@+id/tv_profit"
+            style="@style/bet_item_style"
+            android:layout_width="90dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_bet_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_bet_name_title"
+            tools:text="120000000" />
+
+        <TextView
+            android:id="@+id/tv_bet_name_title"
+            style="@style/bet_item_style"
+            android:layout_width="120dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/bet_name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_bet_title"
+            android:layout_width="50dp"
+            style="@style/bet_item_style"
+            android:text="@string/bet"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_bet_name_title"
+            app:layout_constraintStart_toEndOf="@+id/tv_bet_name_title"
+            app:layout_constraintTop_toTopOf="@+id/tv_bet_name_title"/>
+
+        <TextView
+            android:id="@+id/tv_odd_title"
+            android:layout_width="50dp"
+            style="@style/bet_item_style"
+            android:text="@string/odd"
+            app:layout_constraintStart_toEndOf="@+id/tv_bet_name"
+            app:layout_constraintTop_toBottomOf="@+id/tv_bet_title" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <ImageView
+        android:id="@+id/im_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/bg_black"
+        android:paddingStart="15dp"
+        android:paddingTop="5dp"
+        android:paddingEnd="15dp"
+        android:paddingBottom="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_container"
+        app:srcCompat="@drawable/ic_delete"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/im_wait"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/bg_grey"
+        android:paddingStart="15dp"
+        android:paddingTop="5dp"
+        android:paddingEnd="15dp"
+        android:paddingBottom="5dp"
+        app:layout_constraintBottom_toBottomOf="@+id/im_delete"
+        app:layout_constraintEnd_toStartOf="@+id/im_delete"
+        app:layout_constraintTop_toTopOf="@+id/im_delete"
+        app:srcCompat="@drawable/ic_clock"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/im_fail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/bg_red"
+        android:paddingStart="15dp"
+        android:paddingTop="5dp"
+        android:paddingEnd="15dp"
+        android:paddingBottom="5dp"
+        app:layout_constraintBottom_toBottomOf="@+id/im_wait"
+        app:layout_constraintEnd_toStartOf="@+id/im_wait"
+        app:layout_constraintTop_toTopOf="@+id/im_wait"
+        app:srcCompat="@drawable/ic_close"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/im_success"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/bg_green"
+        android:paddingStart="15dp"
+        android:paddingTop="5dp"
+        android:paddingEnd="15dp"
+        android:paddingBottom="5dp"
+        app:layout_constraintBottom_toBottomOf="@+id/im_fail"
+        app:layout_constraintEnd_toStartOf="@+id/im_fail"
+        app:layout_constraintTop_toTopOf="@+id/im_fail"
+        app:srcCompat="@drawable/ic_check"
+        tools:ignore="ContentDescription" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
