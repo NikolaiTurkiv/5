@@ -64,14 +64,11 @@ class SplashFragment : Fragment(R.layout.fragment_splash) {
                             findNavController().navigate(action)
                         }
                         else -> {
-//                            val action =
-//                                SplashFragmentDirections.actionSplashFragmentToWebViewFragment()
-//                                    .setSite(
-//                                        response.url
-//                                    )
                             val action =
-                                SplashFragmentDirections.actionSplashFragmentToMainFragment()
-                                    .setPush(NO_PUSH)
+                                SplashFragmentDirections.actionSplashFragmentToWebViewFragment()
+                                    .setSite(
+                                        response.url
+                                    )
                             findNavController().navigate(action)
                         }
                     }
